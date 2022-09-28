@@ -1,0 +1,6 @@
+autostart-set-nodisplay.patch
+fix-font-property-in-style.css.patch
+Fix-compilation-error.patch
+Fix-subkey-popmenu-not-showing-after-being-dismissed.patch
+xadapter.vala-Remove-XkbKeyTypesMask-and-f.patch
+stop-patching-generated-gir.patch

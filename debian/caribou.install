@@ -1,0 +1,9 @@
+etc
+usr/bin
+usr/lib/caribou/caribou
+usr/lib/python*/*-packages/caribou/__init__.py
+usr/lib/python*/*-packages/caribou/i18n.py
+usr/lib/python*/*-packages/caribou/settings/
+usr/share/locale
+usr/share/dbus-1/services/org.gnome.Caribou.Daemon.service
+usr/share/glib-2.0/schemas/org.gnome.caribou.gschema.xml

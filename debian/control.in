@@ -1,0 +1,138 @@
+Source: caribou
+Section: libs
+Priority: optional
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Uploaders: @GNOME_TEAM@, Rico Tzschichholz <ricotz@ubuntu.com>
+Build-Depends: debhelper (>= 11),
+               dh-python,
+               gnome-pkg-tools,
+               intltool (>= 0.35.0),
+               python3 (>= 3.2),
+               python-gi-dev (>= 2.90.3),
+               valac,
+               gobject-introspection (>= 0.10.7),
+               gtk-doc-tools,
+               libatspi2.0-dev,
+               libgirepository1.0-dev (>= 0.10.7),
+               libclutter-1.0-dev (>= 1.13.10),
+               libgee-0.8-dev,
+               libglib2.0-dev (>= 2.27.5),
+               libgtk2.0-dev,
+               libgtk-3-dev (>= 3.0.0),
+               libx11-dev,
+               libxklavier-dev,
+               libxml2-dev,
+               libxtst-dev
+Standards-Version: 4.3.0
+Vcs-Browser: https://salsa.debian.org/gnome-team/caribou
+Vcs-Git: https://salsa.debian.org/gnome-team/caribou.git
+Homepage: https://wiki.gnome.org/Projects/Caribou
+
+Package: libcaribou0
+Architecture: any
+Depends: ${shlibs:Depends},
+         libcaribou-common (= ${source:Version}),
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: Configurable on screen keyboard with scanning mode - library
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains the shared library.
+
+Package: libcaribou-common
+Architecture: all
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Configurable on screen keyboard with scanning mode - common files
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains support files for libcaribou
+
+Package: libcaribou-dev
+Section: libdevel
+Architecture: any
+Depends: libcaribou0 (= ${binary:Version}),
+         gir1.2-caribou-1.0 (= ${binary:Version}),
+         libgee-0.8-dev,
+         libglib2.0-dev (>= 2.27.5),
+         libgtk-3-dev,
+         libx11-dev,
+         libxklavier-dev,
+         libxml2-dev,
+         libxtst-dev,
+         ${misc:Depends}
+Description: Configurable on screen keyboard - library (development)
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains the development files for libcaribou library.
+
+Package: gir1.2-caribou-1.0
+Section: introspection
+Architecture: any
+Depends: libcaribou0 (= ${binary:Version}),
+         ${gir:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: GObject introspection for the Caribou library
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains introspection data for the libcaribou library. It
+ can be used by packages using the GIRepository format to generate
+ dynamic bindings.
+
+Package: caribou
+Section: gnome
+Architecture: any
+Depends: ${python3:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends},
+         python3-gi,
+         gir1.2-caribou-1.0,
+         gir1.2-glib-2.0,
+         gir1.2-gtk-3.0,
+         gir1.2-clutter-1.0,
+         python3-dbus,
+         python3-pyatspi
+Description: Configurable on screen keyboard with scanning mode
+ An input assistive technology intended for switch and pointer users.
+
+Package: caribou-antler
+Section: gnome
+Architecture: all
+Depends: ${python3:Depends},
+         caribou (>= ${source:Version}),
+         libcaribou-gtk-module (>= ${source:Version}),
+         libcaribou-gtk3-module (>= ${source:Version}),
+         python3-gi,
+         gir1.2-caribou-1.0,
+         gir1.2-glib-2.0,
+         gir1.2-gtk-3.0,
+         gir1.2-clutter-1.0,
+         python3-dbus,
+         ${misc:Depends}
+Description: Configurable on screen keyboard with scanning mode
+ An input assistive technology intended for switch and pointer users.
+
+Package: libcaribou-gtk-module
+Architecture: any
+Depends: ${shlibs:Depends},
+         gsettings-desktop-schemas,
+         ${misc:Depends}
+Multi-Arch: same
+Description: Configurable on screen keyboard with scanning mode (GTK+ 2.0 module)
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains the GTK+ 2.0 module library.
+
+Package: libcaribou-gtk3-module
+Architecture: any
+Depends: ${shlibs:Depends},
+         libgtk-3-0 (>= 3.2.2-3),
+         gsettings-desktop-schemas,
+         ${misc:Depends}
+Multi-Arch: same
+Description: Configurable on screen keyboard with scanning mode (GTK+ 3.0 module)
+ An input assistive technology intended for switch and pointer users.
+ .
+ This package contains the GTK+ 3.0 module library.
